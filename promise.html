@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      const news = [
+        { newsTitle: "First Title", content: "This is javascript" },
+        { newsTitle: "Second Title", content: "This is backend" },
+        { newsTitle: "This is third title", content: "This is fullstack" },
+      ];
+
+      //define the function showNews
+      const showNews = () => {
+        //setTimeout(slider,2000)
+        setTimeout(() => {
+          let result = "";
+          news.forEach((post) => {
+            result += `<li>${post.newsTitle}
+                <ul>
+                    <li>${post.content}</li></ul>
+                
+                </li>`;
+          });
+          document.querySelector("div").innerHTML = result;
+        }, 2000);
+      };
+
+      //define the function addNews
+      const addNews = (newdata) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            news.push(newdata);
+            const error = false;
+            if (!error) {
+              resolve();
+            } else {
+              reject("Error:something went wrong");
+            }
+          }, 3000);
+        });
+      };
+
+      //function call with promise
+      addNews({
+        newsTitle: "Fourth Title",
+        content: "This is added array object using push method",
+      })
+        .then(showNews)
+        .catch((err) => console.log(err));
+
+      function func1() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(() => {
+            const error = true;
+            if (!error) {
+              console.log("Function: Your promise has been resolved");
+              resolve();
+            } else {
+              console.log("Function: Your promise has not been resolved");
+              reject("Sorry not fulfilled");
+            }
+          }, 2000);
+        });
+      }
+
+      func1()
+        .then(function () {
+          console.log("Sujan: Thanks for resolving");
+        })
+        .catch(function (error) {
+          console.log("Sujan: Very bad bro. Reason:" + error);
+        });
+    </script>
+  </body>
+</html>

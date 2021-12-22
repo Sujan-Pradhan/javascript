@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math</title>
+  </head>
+  <body>
+    <script>
+      const pi = Math.PI;
+      document.write(`${pi.toFixed(2)}<br>`);
+      document.write(`${Math.sqrt(25)}<br>`);
+      document.write(`${Math.pow(2, 3)}<br>`);
+
+      //Random number in betweem 0 & 1
+      let a = Math.random();
+      document.write(`${a}<br>`);
+
+      //Round up
+      document.write(`${Math.round(2.5)}<br>`);
+
+      //ceil
+      document.write(`${Math.ceil(5.2)}<br>`);
+
+      //floor
+      document.write(`${Math.floor(5.7)}<br>`);
+
+      //convert random number to whole number
+      document.write(Math.floor(Math.random() * 6 + 1));
+    </script>
+  </body>
+</html>

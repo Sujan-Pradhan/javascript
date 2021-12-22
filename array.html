@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <p>
+      Array is the collection of homgeneous object in a contiguous location
+      which contains multiple values
+    </p>
+    <pre>
+        example:
+            const vegetable = ['cabbage', 'Spinach', 'Ladyfinger'];
+    </pre>
+    <script>
+      const fruit = ["Orange", "Mango", "Apple", "Banana"];
+      document.write(`${fruit}<br>`);
+      //to access single value from array
+      document.write(`${fruit[0]}<br>`);
+
+      //to access all values from array
+      for (let i = 0; i < fruit.length; i++) document.write(`${fruit[i]}<br>`);
+
+      //to remove last array elements using pop
+      fruit.pop();
+      document.write(`${fruit}<br>`);
+
+      //to add fruit last of the aarray using push
+      fruit.push("coconut");
+      document.write(`${fruit}<br>`);
+
+      //to remove first array element using shift
+      fruit.shift();
+      document.write(`${fruit}<br>`);
+
+      //to add first array element using unshift
+      fruit.unshift("Grapes");
+      document.write(`${fruit}<br>`);
+
+      //splice
+      fruit.splice(2, 0, "Kiwi", "Dragon fruits");
+      //2 is a position where new elements is added from
+      //0 means no any array element is removed
+      document.write(`${fruit}<br>`);
+
+      fruit.splice(3, 2);
+      //2 means 2 elements are removed from position 3
+      document.write(`${fruit}<br>`);
+
+      //slice
+      const citrus = fruit.slice(1, 2);
+      document.write(`${fruit}<br>`);
+    </script>
+  </body>
+</html>

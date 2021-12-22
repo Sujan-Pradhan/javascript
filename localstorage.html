@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localstorage</title>
+  </head>
+  <body>
+    <script>
+      localStorage.setItem("test", "this is stored in Local browser");
+      const showItem = localStorage.getItem("test");
+      document.write(`${showItem}`);
+
+      //JSON => Javascript object notation
+      const details = {
+        firstname: "Sujan",
+        lastname: "Pradhan",
+        subjects: "['data structure','javascript','compputer programming']",
+      };
+      // localStorage.setItem("Student",details)
+      const object_convert_to_string = JSON.stringify(details);
+      localStorage.setItem("Student", object_convert_to_string);
+      const show = localStorage.getItem("Student");
+      console.log(show);
+      const string_to_object = JSON.parse(show);
+      console.log(string_to_object);
+      console.log(string_to_object.firstname);
+    </script>
+  </body>
+</html>
